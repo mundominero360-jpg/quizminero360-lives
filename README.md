@@ -1,25 +1,14 @@
-# QuizMinero360 — versión corregida para LIVE
+# QuizMinero360 — dos pantallas
 
-## Archivos
-- `index.html`: interfaz y pantalla vertical 9:16 optimizada.
-- `questions.js`: banco original, **sin cambios** (25 LOTO y 25 riesgos eléctricos).
+Subir `index.html`, `questions.js` y `vercel.json` a la raíz de GitHub (reemplazar `index.html` y `questions.js` existentes). Vercel despliega automáticamente si está conectado al repositorio.
 
-## Publicar en GitHub
-1. Entra al repositorio y abre la rama `principal`.
-2. Sube `index.html` y `questions.js` a la **raíz**, reemplazando los existentes. Los nombres deben ser EXACTAMENTE esos (no `índice.html`).
-3. Confirma cambios. Comprueba el despliegue de Vercel.
+- **Panel:** https://quizminero360-lives.vercel.app/panel
+- **Pantalla LIVE:** https://quizminero360-lives.vercel.app/live
 
-## Captura y nitidez
-- Panel del presentador: `https://quizminero360-lives.vercel.app/`
-- Vista previa LIVE para Chrome: `https://quizminero360-lives.vercel.app/?live=1`
-- Salida NATIVA sin escalado (para fuente de navegador): `https://quizminero360-lives.vercel.app/?live=1&native=1`
-- En **OBS**, añade una fuente **Navegador** con URL nativa y tamaño **1080 × 1920**. NO uses captura de una ventana de Chrome reducida a 400–500 px y luego la amplíes: ese procedimiento desenfoca el texto.
-- En **TikTok LIVE Studio**, puedes usar OBS Virtual Camera si está disponible, o una fuente compatible de navegador con resolución vertical adecuada. Comprueba el encuadre en vista previa antes de emitir.
-- IMPORTANTE: la fuente Navegador de OBS puede tener almacenamiento separado de Chrome; por eso **la sincronización automática del panel no está garantizada en OBS**. La vista previa Chrome y el panel sí se sincronizan cuando están en el mismo perfil y origen. Para sincronización robusta entre aplicaciones sería necesario un backend o canal compartido.
-- Si usas captura de Chrome, agranda la ventana de ORIGEN y usa zoom que permita ver todas las opciones, evitando estirarla mucho dentro de LIVE Studio.
+En el panel selecciona preguntas y pulsa «Abrir pantalla LIVE». En TikTok LIVE Studio añade **Captura de ventana** y elige exclusivamente la ventana LIVE de Chrome, no el panel. Ambos deben abrirse en Chrome en el mismo perfil y ordenador. La sincronización usa almacenamiento local y eventos `storage`. No sincroniza entre dispositivos o navegadores aislados, ni garantiza funcionamiento en fuente navegador de OBS.
 
-## Cambios
-- Diseño vertical 9:16, tipografía de alternativas ampliada, espaciados y márgenes ajustados.
-- Modo `native=1` sin transformaciones CSS de reducción.
-- Botón para copiar URL nativa desde el panel.
-- Se mantienen los 50 enunciados, alternativas, respuestas, explicaciones y fundamentos tal como fueron proporcionados.
+**Importante:** `/panel` es una URL separada, **no privada**: todavía no hay inicio de sesión. Para proteger el panel de terceros y sincronizar entre dispositivos se requiere autenticación y un backend en tiempo real.
+
+**Nitidez:** La resolución final depende de los píxeles reales capturados, el zoom y la escala de Windows, y el ajuste de TikTok LIVE Studio. El modo `/live?native=1` no escala la salida 1080 × 1920, pero necesita una fuente que realmente capture esa resolución. No amplíes capturas pequeñas.
+
+Se conserva el banco original de 50 preguntas.
