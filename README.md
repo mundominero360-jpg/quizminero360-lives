@@ -1,24 +1,25 @@
-# QuizMinero360 — FULL HD 1080 × 1920
+# QuizMinero360 — versión corregida para LIVE
 
 ## Archivos
-- `index.html`: panel del presentador y salida Full HD en la misma aplicación.
-- `questions.js`: banco original de 25 preguntas LOTO y 25 de riesgos eléctricos, sin cambios.
+- `index.html`: interfaz y pantalla vertical 9:16 optimizada.
+- `questions.js`: banco original, **sin cambios** (25 LOTO y 25 riesgos eléctricos).
 
-## Subir a GitHub
-1. En el repositorio `quizminero360-vidas`, entra a la rama **principal**.
-2. **Agregar archivo → Cargar archivos** y selecciona `index.html` y `questions.js`.
-3. Confirma los cambios directamente en la rama principal. Vercel debería desplegar la actualización automáticamente.
-4. Si GitHub muestra un archivo `índice.html`, NO sustituye a `index.html`: el archivo debe llamarse exactamente `index.html`.
+## Publicar en GitHub
+1. Entra al repositorio y abre la rama `principal`.
+2. Sube `index.html` y `questions.js` a la **raíz**, reemplazando los existentes. Los nombres deben ser EXACTAMENTE esos (no `índice.html`).
+3. Confirma cambios. Comprueba el despliegue de Vercel.
 
-## Uso en TikTok LIVE Studio
-1. Abre `https://quizminero360-lives.vercel.app/` para controlar las preguntas.
-2. Pulsa **Abrir pantalla LIVE Full HD (1080 × 1920)**. Se abre una ventana con **solo el quiz**.
-3. En TikTok LIVE Studio, captura **esa ventana**, no la ventana del panel. La salida se ha maquetado a 1080 × 1920 píxeles.
-4. Si usas captura de pantalla, verifica que la ventana no esté reducida por Chrome/Windows; reducir y luego ampliar produce borrosidad. Para garantizar resolución de fuente de 1080 × 1920, usa una fuente de navegador en OBS con URL `https://quizminero360-lives.vercel.app/?live=1` y dimensiones 1080 × 1920. **Importante**: la sincronización de preguntas usa almacenamiento del mismo navegador; una fuente de navegador OBS puede estar aislada y no sincronizar automáticamente con Chrome. Para control sincronizado, usa la ventana de Chrome de salida LIVE como fuente, o configura una fuente con almacenamiento compartido.
-5. Cambia preguntas y revela respuestas en la ventana del presentador. La ventana LIVE se actualiza automáticamente mientras ambas estén en el mismo origen y perfil del navegador.
+## Captura y nitidez
+- Panel del presentador: `https://quizminero360-lives.vercel.app/`
+- Vista previa LIVE para Chrome: `https://quizminero360-lives.vercel.app/?live=1`
+- Salida NATIVA sin escalado (para fuente de navegador): `https://quizminero360-lives.vercel.app/?live=1&native=1`
+- En **OBS**, añade una fuente **Navegador** con URL nativa y tamaño **1080 × 1920**. NO uses captura de una ventana de Chrome reducida a 400–500 px y luego la amplíes: ese procedimiento desenfoca el texto.
+- En **TikTok LIVE Studio**, puedes usar OBS Virtual Camera si está disponible, o una fuente compatible de navegador con resolución vertical adecuada. Comprueba el encuadre en vista previa antes de emitir.
+- IMPORTANTE: la fuente Navegador de OBS puede tener almacenamiento separado de Chrome; por eso **la sincronización automática del panel no está garantizada en OBS**. La vista previa Chrome y el panel sí se sincronizan cuando están en el mismo perfil y origen. Para sincronización robusta entre aplicaciones sería necesario un backend o canal compartido.
+- Si usas captura de Chrome, agranda la ventana de ORIGEN y usa zoom que permita ver todas las opciones, evitando estirarla mucho dentro de LIVE Studio.
 
-## Diagnóstico de nitidez
-El lienzo HTML ahora tiene dimensiones nativas de 1080 × 1920 en modo LIVE, con letras más grandes. La nitidez final depende también de la resolución efectiva de captura, escalado de Windows, zoom del navegador y ajustes de transmisión. Evita ampliar una ventana capturada de 450 px hasta 1080 px.
-
-## Banco
-50 preguntas originales, dos módulos, respuestas y explicaciones sin modificar. Comprueba referencias normativas antes de usar en certificaciones.
+## Cambios
+- Diseño vertical 9:16, tipografía de alternativas ampliada, espaciados y márgenes ajustados.
+- Modo `native=1` sin transformaciones CSS de reducción.
+- Botón para copiar URL nativa desde el panel.
+- Se mantienen los 50 enunciados, alternativas, respuestas, explicaciones y fundamentos tal como fueron proporcionados.
