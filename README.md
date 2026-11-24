@@ -1,23 +1,24 @@
-# QuizMinero360 — Lives de Supervisión de Alto Riesgo
+# QuizMinero360 — FULL HD 1080 × 1920
 
-Aplicación estática (HTML, CSS y JavaScript) para GitHub + Vercel, sin base de datos ni dependencias.
+## Archivos
+- `index.html`: panel del presentador y salida Full HD en la misma aplicación.
+- `questions.js`: banco original de 25 preguntas LOTO y 25 de riesgos eléctricos, sin cambios.
 
-## Despliegue
-1. Sube `index.html` y `questions.js` a la raíz de un repositorio de GitHub.
-2. En Vercel: **Add New → Project → Import Git Repository**.
-3. Selecciona **Framework Preset: Other**, deja el directorio raíz `./` y despliega.
-4. Abre la URL pública. Elige Live 01 (LOTO) o Live 02 (Riesgos eléctricos).
+## Subir a GitHub
+1. En el repositorio `quizminero360-vidas`, entra a la rama **principal**.
+2. **Agregar archivo → Cargar archivos** y selecciona `index.html` y `questions.js`.
+3. Confirma los cambios directamente en la rama principal. Vercel debería desplegar la actualización automáticamente.
+4. Si GitHub muestra un archivo `índice.html`, NO sustituye a `index.html`: el archivo debe llamarse exactamente `index.html`.
 
-## Transmisión TikTok
-- El lienzo del quiz tiene proporción **9:16**. En TikTok LIVE Studio u OBS, captura solo el rectángulo vertical, no el panel lateral de presentador.
-- En OBS configura el lienzo a **1080 × 1920** y ajusta la captura del navegador a esa proporción.
-- Atajos: flechas izquierda/derecha para preguntas, espacio para revelar, A-D para seleccionar, R para limpiar.
-- En pantalla completa, la visualización usa la pantalla disponible; para emisión se recomienda capturar y recortar el área `.stage`.
+## Uso en TikTok LIVE Studio
+1. Abre `https://quizminero360-lives.vercel.app/` para controlar las preguntas.
+2. Pulsa **Abrir pantalla LIVE Full HD (1080 × 1920)**. Se abre una ventana con **solo el quiz**.
+3. En TikTok LIVE Studio, captura **esa ventana**, no la ventana del panel. La salida se ha maquetado a 1080 × 1920 píxeles.
+4. Si usas captura de pantalla, verifica que la ventana no esté reducida por Chrome/Windows; reducir y luego ampliar produce borrosidad. Para garantizar resolución de fuente de 1080 × 1920, usa una fuente de navegador en OBS con URL `https://quizminero360-lives.vercel.app/?live=1` y dimensiones 1080 × 1920. **Importante**: la sincronización de preguntas usa almacenamiento del mismo navegador; una fuente de navegador OBS puede estar aislada y no sincronizar automáticamente con Chrome. Para control sincronizado, usa la ventana de Chrome de salida LIVE como fuente, o configura una fuente con almacenamiento compartido.
+5. Cambia preguntas y revela respuestas en la ventana del presentador. La ventana LIVE se actualiza automáticamente mientras ambas estén en el mismo origen y perfil del navegador.
 
-## Contenido
-25 preguntas de LOTO y 25 de riesgos eléctricos, con respuestas, explicaciones y referencias técnicas. Se han incluido como bancos de preparación para lives; las referencias normativas y los procedimientos específicos deben validarse antes de su uso en una evaluación oficial.
+## Diagnóstico de nitidez
+El lienzo HTML ahora tiene dimensiones nativas de 1080 × 1920 en modo LIVE, con letras más grandes. La nitidez final depende también de la resolución efectiva de captura, escalado de Windows, zoom del navegador y ajustes de transmisión. Evita ampliar una ventana capturada de 450 px hasta 1080 px.
 
-## Personalización
-- Colores corporativos en CSS: `--gold: #ffcf15`, fondo negro y detalles dorados.
-- Las preguntas están en `questions.js`, en `QUESTION_BANK.loto` y `QUESTION_BANK.electric`.
-- La aplicación no almacena datos personales ni resultados.
+## Banco
+50 preguntas originales, dos módulos, respuestas y explicaciones sin modificar. Comprueba referencias normativas antes de usar en certificaciones.
