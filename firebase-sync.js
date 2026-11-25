@@ -11,7 +11,7 @@ const config = {
  messagingSenderId: '953046273876',
  appId: '1:953046273876:web:ab3aafa7dcd947cbe8c2c1'
 };
-const ADMIN_EMAIL = 'CORREO_MUNDOMINERO360@GMAIL.COM'; // Cambia por el correo autorizado en las reglas.
+const ADMIN_EMAIL = 'mundominero360@gmail.com';; // Cambia por el correo autorizado en las reglas.
 const app=initializeApp(config), db=getDatabase(app), auth=getAuth(app);
 const isLive = location.pathname.replace(/\/$/,'').endsWith('/live') || new URLSearchParams(location.search).has('live');
 const liveRef=ref(db,'lives/live-principal');
