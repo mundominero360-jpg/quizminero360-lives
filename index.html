@@ -6,6 +6,22 @@ body.live{width:100%;height:100vh;min-height:0;overflow:hidden;background:#10141
 body.live .layout{position:relative;width:100%;height:100vh;margin:0;padding:0;overflow:hidden}
 body.live .stage{position:absolute;top:0;left:0;width:1080px;height:1920px;min-height:1920px;transform-origin:top left;will-change:transform}
 @media (min-width:1080px) and (min-height:1920px){body.live .stage{transform:none}}
+
+/* MM360: composición compacta y centrada para la salida vertical */
+body.live .stage{padding:92px 80px 90px}
+body.live .rule{margin:26px 0}
+body.live .module{margin:22px 0 18px;font-size:48px}
+body.live .questionbox{margin-top:28px;padding:28px 30px}
+body.live .qnum{margin-bottom:9px;font-size:25px}
+body.live .question{font-size:46px;line-height:1.2}
+body.live .answers{gap:16px;margin-top:24px}
+body.live .answer{min-height:112px;padding:18px 22px;gap:20px;font-size:32px;line-height:1.2}
+body.live .letter{min-width:62px;height:62px;font-size:32px}
+body.live .explanation{margin-top:20px;padding:20px;font-size:25px}
+/* Agrupa el contenido en la zona central, sin estirar las tarjetas. */
+body.live .footer{margin-top:40px;padding-top:20px}
+body.live .stage{justify-content:center}
+body.live .stage>header,body.live .stage>.rule,body.live .stage>.eyebrow,body.live .stage>.module,body.live .stage>.pills,body.live .stage>.questionbox,body.live .stage>.answers,body.live .stage>.explanation,body.live .stage>.footer{flex-shrink:0}
 </style></head><body><main class="layout"><section class="stage" id="stage"><header><div class="brand">QUIZMINERO<span>360</span></div><div class="tagline">MUNDOMINERO360® · ¡CONOCIMIENTO QUE TRANSFORMA!</div></header><div class="rule"></div><div class="eyebrow">ESPECIALIZACIÓN · SUPERVISOR DE TRABAJOS DE ALTO RIESGO</div><div class="module" id="moduleTitle"></div><div class="pills"><span class="pill" id="liveTag"></span><span class="pill" id="levelTag"></span><span class="pill" id="counterTag"></span></div><div class="questionbox"><div class="qnum" id="qnum"></div><div class="question" id="question">Cargando preguntas…</div></div><div class="answers" id="answers"></div><div class="explanation hidden" id="explanation"></div><div class="footer">MM360 GRUPO EMPRESARIAL · ACADEMIA<small>Curso de 45 horas · mundominero360.com</small></div></section><aside class="panel"><h2>Panel del presentador</h2><p>Controla aquí el LIVE. En TikTok captura solamente la ventana vertical del cuestionario.</p><button class="wide primary" id="signIn">Iniciar sesión con Google</button><button class="wide hidden" id="signOut">Cerrar sesión</button><div class="message" id="connection">Iniciando Firebase…</div><label for="moduleSelect">Selecciona el LIVE</label><select id="moduleSelect"><option value="loto">LIVE 01 · Bloqueo y etiquetado (LOTO)</option><option value="electric">LIVE 02 · Riesgos eléctricos</option></select><div class="controls"><button id="prev">← Anterior</button><button class="primary" id="next">Siguiente →</button><button class="primary" id="reveal">Revelar respuesta</button><button id="clear">Limpiar selección</button></div><button class="wide primary" id="openLive">Abrir pantalla LIVE (solo cuestionario)</button><button class="wide" id="copySource">Copiar enlace para OBS 1080 × 1920</button><button class="wide" id="reset">Reiniciar LIVE</button><div class="status" id="status"></div><p>Atajos: ← → cambiar pregunta · Espacio revelar · A/B/C/D seleccionar · R limpiar.</p></aside></main><script src="/preguntas.js"></script><script>
 'use strict';
 const $=id=>document.getElementById(id);
