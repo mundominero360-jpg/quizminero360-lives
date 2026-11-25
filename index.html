@@ -45,6 +45,6 @@ if(isLiveView){
   function fitLive(){const app=document.querySelector('.app');if(nativeOutput){app.style.transform='none';return;}const scale=Math.min(innerWidth/1080,innerHeight/1920);app.style.transform=`translate(${Math.max(0,(innerWidth-1080*scale)/2)}px,${Math.max(0,(innerHeight-1920*scale)/2)}px) scale(${scale})`;}
   window.addEventListener('resize',fitLive);fitLive();
    window.mm360ApplyState=(v)=>{if(v&&QUESTION_BANK[v.moduleKey]){moduleKey=v.moduleKey;index=Math.max(0,Math.min(24,Number(v.index)||0));selected=v.selected??null;revealed=!!v.revealed;draw();}};
-
+}
 
 </script><script type="module" src="/firebase-sync.js"></script></body></html>
